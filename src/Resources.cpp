@@ -4247,7 +4247,7 @@ static unsigned char xml_res_file_3[] = {
 120,71,114,105,100,83,105,122,101,114,34,62,10,32,32,32,32,32,32,32,32,
 32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,60,104,103,97,112,62,49,
 48,60,47,104,103,97,112,62,10,32,32,32,32,32,32,32,32,32,32,32,32,32,32,
-32,32,32,32,32,32,32,32,32,32,60,114,111,119,115,62,50,60,47,114,111,119,
+32,32,32,32,32,32,32,32,32,32,60,114,111,119,115,62,48,60,47,114,111,119,
 115,62,10,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,
 32,32,32,60,99,111,108,115,62,50,60,47,99,111,108,115,62,10,32,32,32,32,
 32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,60,118,103,
@@ -7499,9 +7499,9 @@ void InitXmlResource()
     }
 
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_logo_about.png"), xml_res_file_0, xml_res_size_0, wxT("image/png"));
-    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$resources_boxabout.xrc"), xml_res_file_1, xml_res_size_1, wxT("text/xml"));
-    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$resources_boxnew.xrc"), xml_res_file_2, xml_res_size_2, wxT("text/xml"));
-    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$resources_boxoptions.xrc"), xml_res_file_3, xml_res_size_3, wxT("text/xml"));
+    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$._resources_boxabout.xrc"), xml_res_file_1, xml_res_size_1, wxT("text/xml"));
+    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$._resources_boxnew.xrc"), xml_res_file_2, xml_res_size_2, wxT("text/xml"));
+    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$._resources_boxoptions.xrc"), xml_res_file_3, xml_res_size_3, wxT("text/xml"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_menubar_stop.png"), xml_res_file_4, xml_res_size_4, wxT("image/png"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_menubar_start.png"), xml_res_file_5, xml_res_size_5, wxT("image/png"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_menubar_completed.png"), xml_res_file_6, xml_res_size_6, wxT("image/png"));
@@ -7515,8 +7515,8 @@ void InitXmlResource()
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_menubar_copydata.png"), xml_res_file_14, xml_res_size_14, wxT("image/png"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_menubar_new.png"), xml_res_file_15, xml_res_size_15, wxT("image/png"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_menubar_quit.png"), xml_res_file_16, xml_res_size_16, wxT("image/png"));
-    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$resources_images.xrc"), xml_res_file_17, xml_res_size_17, wxT("text/xml"));
-    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$resources_mainwindow.xrc"), xml_res_file_18, xml_res_size_18, wxT("text/xml"));
+    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$._resources_images.xrc"), xml_res_file_17, xml_res_size_17, wxT("text/xml"));
+    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$._resources_mainwindow.xrc"), xml_res_file_18, xml_res_size_18, wxT("text/xml"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_menubar_startall.png"), xml_res_file_19, xml_res_size_19, wxT("image/png"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_menubar_stopall.png"), xml_res_file_20, xml_res_size_20, wxT("image/png"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_menubar_pasteurl.png"), xml_res_file_21, xml_res_size_21, wxT("image/png"));
@@ -7527,7 +7527,7 @@ void InitXmlResource()
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_menubar_options.png"), xml_res_file_26, xml_res_size_26, wxT("image/png"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_menubar_help.png"), xml_res_file_27, xml_res_size_27, wxT("image/png"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_menubar_about.png"), xml_res_file_28, xml_res_size_28, wxT("image/png"));
-    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$resources_menubar.xrc"), xml_res_file_29, xml_res_size_29, wxT("text/xml"));
+    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$._resources_menubar.xrc"), xml_res_file_29, xml_res_size_29, wxT("text/xml"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_toolbar_download_new.png"), xml_res_file_30, xml_res_size_30, wxT("image/png"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_toolbar_download_remove.png"), xml_res_file_31, xml_res_size_31, wxT("image/png"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_toolbar_download_schedule.png"), xml_res_file_32, xml_res_size_32, wxT("image/png"));
@@ -7538,12 +7538,12 @@ void InitXmlResource()
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_toolbar_download_move_up.png"), xml_res_file_37, xml_res_size_37, wxT("image/png"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_toolbar_download_move_down.png"), xml_res_file_38, xml_res_size_38, wxT("image/png"));
     XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$RipStop_toolbar_download_info.png"), xml_res_file_39, xml_res_size_39, wxT("image/png"));
-    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$resources_toolbar.xrc"), xml_res_file_40, xml_res_size_40, wxT("text/xml"));
-    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$resources_boxabout.xrc"));
-    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$resources_boxnew.xrc"));
-    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$resources_boxoptions.xrc"));
-    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$resources_images.xrc"));
-    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$resources_mainwindow.xrc"));
-    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$resources_menubar.xrc"));
-    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$resources_toolbar.xrc"));
+    XRC_ADD_FILE(wxT("XRC_resource/Resources.cpp$._resources_toolbar.xrc"), xml_res_file_40, xml_res_size_40, wxT("text/xml"));
+    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$._resources_boxabout.xrc"));
+    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$._resources_boxnew.xrc"));
+    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$._resources_boxoptions.xrc"));
+    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$._resources_images.xrc"));
+    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$._resources_mainwindow.xrc"));
+    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$._resources_menubar.xrc"));
+    wxXmlResource::Get()->Load(wxT("memory:XRC_resource/Resources.cpp$._resources_toolbar.xrc"));
 }
