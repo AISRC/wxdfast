@@ -80,9 +80,13 @@ wxConnectionBase *mServer::OnAcceptConnection(const wxString& topic)
     return NULL;
 }
 
+#if wxMAJOR_VERSION < 2 || (wxMAJOR_VERSION == 2 && wxMINOR_VERSION < 9)
 bool mConnection::OnExecute(const wxString& topic, wxChar* data, int size, wxIPCFormat format)
+#else
+bool mConnection::OnExecute(const wxString& topic, const void * data, size_t WXUNUSED(size), wxIPCFormat format)
+#endif
 {
-    wxString urlsparameter = data;
+    wxString urlsparameter((wxChar*)data);
     wxArrayString urls;
     wxStringTokenizer *tkz01, *tkz02;
     int numberofparts, startoption,ontop;

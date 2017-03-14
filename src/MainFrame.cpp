@@ -909,7 +909,8 @@ bool mMainFrame::NewDownload(wxArrayString url, wxString destination,int metalin
         edturl->SetValue(url.Item(0));
     else
     {
-        lstaddresslist->InsertItems(url,0);
+		if(url.GetCount()>0)
+			lstaddresslist->InsertItems(url,0);
         for (unsigned int i = 0; i < lstaddresslist->GetCount() ;i++)
             lstaddresslist->Check(i);
     }

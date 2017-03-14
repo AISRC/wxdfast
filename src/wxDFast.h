@@ -945,7 +945,11 @@
     class mConnection: public wxConnection
     {
     public:
+#if wxMAJOR_VERSION < 2 || (wxMAJOR_VERSION == 2 && wxMINOR_VERSION < 9)
         bool OnExecute(const wxString& topic, wxChar* data, int size, wxIPCFormat format);
+#else
+		bool OnExecute(const wxString& topic, const void * data, size_t WXUNUSED(size), wxIPCFormat format);
+#endif
     };
 
     class mClient: public wxClient
