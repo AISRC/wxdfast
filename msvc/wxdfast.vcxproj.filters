@@ -93,6 +93,9 @@
     <ClCompile Include="..\src\wxSHA1\wxSHA1.cpp">
       <Filter>Source Files\wxSHA1</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Resources.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\src\wxDFast.rc">

@@ -443,7 +443,7 @@
                                 <flag>wxALIGN_RIGHT</flag>
                                 <object class="wxFlexGridSizer">
                                     <hgap>0</hgap>
-                                    <rows>1</rows>
+                                    <rows>0</rows>
                                     <cols>5</cols>
                                     <vgap>0</vgap>
                                     <object class="spacer">

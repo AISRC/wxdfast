@@ -21,6 +21,55 @@ WX_DEFINE_OBJARRAY(mListSelection)
 
 IMPLEMENT_APP(mApplication)
 
+wxString GetExecutablePath()
+{
+	static bool	found = false;
+	static wxString	path;
+
+	if (!found) {
+#ifdef __WXMSW__
+
+		wxChar buf[512];
+		*buf = wxT('\0');
+		GetModuleFileName(NULL, buf, 511);
+		path = buf;
+
+#elif defined(__WXMAC__)
+
+		ProcessInfoRec processinfo;
+		ProcessSerialNumber	procno;
+		FSSpec fsSpec;
+
+		procno.highLongOfPSN = NULL;
+		procno.lowLongOfPSN = kCurrentProcess;
+		processinfo.processInfoLength = sizeof(ProcessInfoRec);
+		processinfo.processName = NULL;
+		processinfo.processAppSpec = &fsSpec;
+
+		GetProcessInformation(&procno, &processinfo);
+		path = wxMacFSSpec2MacFilename(&fsSpec);
+#else
+		wxString argv0 = wxTheApp->argv[0];
+
+		if (wxIsAbsolutePath(argv0)) {
+			path = argv0;
+		}
+		else {
+			wxPathList pathlist;
+			pathlist.AddEnvList(wxT("PATH"));
+			path = pathlist.FindAbsoluteValidPath(argv0);
+		}
+
+		wxFileName filename(path);
+		filename.Normalize();
+		path = filename.GetFullPath();
+#endif
+		found = true;
+	}
+
+	return path;
+}
+
 wxConnectionBase *mServer::OnAcceptConnection(const wxString& topic)
 {
     if ( topic == IPC_TOPIC + wxGetUserId())
@@ -177,8 +226,12 @@ bool mApplication::OnInit()
     wxImage::AddHandler(new wxXPMHandler);
     wxImage::AddHandler(new wxPNGHandler);
     wxXmlResource::Get()->InitAllHandlers();
-    wxString resourcepath = wxT("resources/");
-    if (!wxFileExists(resourcepath + wxT("mainwindow.xrc")))
+	wxFileName apppath(GetExecutablePath());
+	apppath.MakeAbsolute();
+
+    wxString resourcepath = apppath.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + wxT("resources") + wxFILE_SEP_PATH;
+	wxFileName mwxrc(resourcepath + wxT("mainwindow.xrc"));
+    if (!wxFileExists(mwxrc.GetFullPath()))
     {
         //THIS IS NEVER GOING TO HAPPEN ON WINDOWS SYSTEM
         /*#ifdef __WXMSW__
@@ -188,7 +241,7 @@ bool mApplication::OnInit()
         resourcepath = wxT("/usr/share/wxdfast/");
         //#endif
     }
-    themepath = resourcepath + wxT("RipStop/");
+    themepath = resourcepath + wxT("RipStop") + wxFILE_SEP_PATH;
     #ifdef USE_EXTERNAL_XRC
     wxXmlResource::Get()->Load(resourcepath + wxT("mainwindow.xrc"));
     wxXmlResource::Get()->Load(resourcepath + wxT("menubar.xrc"));
