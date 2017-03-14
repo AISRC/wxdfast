@@ -784,7 +784,6 @@
                             <rows>8</rows>
                             <cols>0</cols>
                             <vgap>5</vgap>
-                            <growablecols>1</growablecols>
                             <object class="sizeritem">
                                 <flag>wxFIXED_MINSIZE</flag>
                                 <object class="wxCheckBox" name="chkactivatescheduling">
@@ -1115,7 +1114,6 @@
                             <rows>1</rows>
                             <cols>0</cols>
                             <vgap>5</vgap>
-                            <growablecols>1</growablecols>
                             <object class="sizeritem">
                                 <flag>wxFIXED_MINSIZE</flag>
                                 <object class="wxStaticBoxSizer">
@@ -1181,7 +1179,6 @@
                             <rows>2</rows>
                             <cols>0</cols>
                             <vgap>5</vgap>
-                            <growablecols>1</growablecols>
                             <object class="sizeritem">
                                 <option>1</option>
                                 <object class="wxStaticBoxSizer">
