@@ -782,7 +782,7 @@
                         <object class="wxFlexGridSizer">
                             <hgap>0</hgap>
                             <rows>8</rows>
-                            <cols>1</cols>
+                            <cols>0</cols>
                             <vgap>5</vgap>
                             <growablecols>1</growablecols>
                             <object class="sizeritem">
@@ -1113,7 +1113,7 @@
                         <object class="wxFlexGridSizer">
                             <hgap>0</hgap>
                             <rows>1</rows>
-                            <cols>1</cols>
+                            <cols>0</cols>
                             <vgap>5</vgap>
                             <growablecols>1</growablecols>
                             <object class="sizeritem">
@@ -1179,7 +1179,7 @@
                         <object class="wxFlexGridSizer">
                             <hgap>0</hgap>
                             <rows>2</rows>
-                            <cols>1</cols>
+                            <cols>0</cols>
                             <vgap>5</vgap>
                             <growablecols>1</growablecols>
                             <object class="sizeritem">
