@@ -144,32 +144,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\BoxFind.cpp" />
-    <ClCompile Include="..\src\BoxNew.cpp" />
-    <ClCompile Include="..\src\BoxOptions.cpp" />
-    <ClCompile Include="..\src\CheckNewRelease.cpp" />
-    <ClCompile Include="..\src\DownloadFile.cpp" />
-    <ClCompile Include="..\src\DownloadThread.cpp" />
-    <ClCompile Include="..\src\FinishedList.cpp" />
-    <ClCompile Include="..\src\FTP.cpp" />
-    <ClCompile Include="..\src\Graph.cpp" />
-    <ClCompile Include="..\src\HTTP.cpp" />
-    <ClCompile Include="..\src\InProgressList.cpp" />
-    <ClCompile Include="..\src\MainFrame.cpp" />
-    <ClCompile Include="..\src\Metalink.cpp" />
-    <ClCompile Include="..\src\ProgressBar.cpp" />
-    <ClCompile Include="..\src\Resources.cpp" />
-    <ClCompile Include="..\src\TaskBarIcon.cpp" />
-    <ClCompile Include="..\src\UrlName.cpp" />
-    <ClCompile Include="..\src\UtilFunctions.cpp" />
-    <ClCompile Include="..\src\wxDFast.cpp" />
-    <ClCompile Include="..\src\wxMD5\md5.cpp" />
-    <ClCompile Include="..\src\wxMD5\wxMD5.cpp" />
-    <ClCompile Include="..\src\wxSHA1\sha1.cpp" />
-    <ClCompile Include="..\src\wxSHA1\wxSHA1.cpp" />
+    <ClCompile Include="..\..\src\BoxFind.cpp" />
+    <ClCompile Include="..\..\src\BoxNew.cpp" />
+    <ClCompile Include="..\..\src\BoxOptions.cpp" />
+    <ClCompile Include="..\..\src\CheckNewRelease.cpp" />
+    <ClCompile Include="..\..\src\DownloadFile.cpp" />
+    <ClCompile Include="..\..\src\DownloadThread.cpp" />
+    <ClCompile Include="..\..\src\FinishedList.cpp" />
+    <ClCompile Include="..\..\src\FTP.cpp" />
+    <ClCompile Include="..\..\src\Graph.cpp" />
+    <ClCompile Include="..\..\src\HTTP.cpp" />
+    <ClCompile Include="..\..\src\InProgressList.cpp" />
+    <ClCompile Include="..\..\src\MainFrame.cpp" />
+    <ClCompile Include="..\..\src\Metalink.cpp" />
+    <ClCompile Include="..\..\src\ProgressBar.cpp" />
+    <ClCompile Include="..\..\src\Resources.cpp" />
+    <ClCompile Include="..\..\src\TaskBarIcon.cpp" />
+    <ClCompile Include="..\..\src\UrlName.cpp" />
+    <ClCompile Include="..\..\src\UtilFunctions.cpp" />
+    <ClCompile Include="..\..\src\wxDFast.cpp" />
+    <ClCompile Include="..\..\src\wxMD5\md5.cpp" />
+    <ClCompile Include="..\..\src\wxMD5\wxMD5.cpp" />
+    <ClCompile Include="..\..\src\wxSHA1\sha1.cpp" />
+    <ClCompile Include="..\..\src\wxSHA1\wxSHA1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\src\wxDFast.rc">
+    <ResourceCompile Include="..\..\src\wxDFast.rc">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(WXWIN)\include;$(WXWIN)\include\msvc;</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(WXWIN)\include;$(WXWIN)\include\msvc;</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(WXWIN)\include;$(WXWIN)\include\msvc;</AdditionalIncludeDirectories>
@@ -177,11 +177,11 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\wxDFast.h" />
-    <ClInclude Include="..\src\wxMD5\md5.h" />
-    <ClInclude Include="..\src\wxMD5\wxMD5.h" />
-    <ClInclude Include="..\src\wxSHA1\sha1.h" />
-    <ClInclude Include="..\src\wxSHA1\wxSHA1.h" />
+    <ClInclude Include="..\..\src\wxDFast.h" />
+    <ClInclude Include="..\..\src\wxMD5\md5.h" />
+    <ClInclude Include="..\..\src\wxMD5\wxMD5.h" />
+    <ClInclude Include="..\..\src\wxSHA1\sha1.h" />
+    <ClInclude Include="..\..\src\wxSHA1\wxSHA1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

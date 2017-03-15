@@ -27,95 +27,95 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\BoxFind.cpp">
+    <ClCompile Include="..\..\src\BoxFind.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\BoxNew.cpp">
+    <ClCompile Include="..\..\src\BoxNew.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\BoxOptions.cpp">
+    <ClCompile Include="..\..\src\BoxOptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\CheckNewRelease.cpp">
+    <ClCompile Include="..\..\src\CheckNewRelease.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\DownloadFile.cpp">
+    <ClCompile Include="..\..\src\DownloadFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\DownloadThread.cpp">
+    <ClCompile Include="..\..\src\DownloadThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\FinishedList.cpp">
+    <ClCompile Include="..\..\src\FinishedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\FTP.cpp">
+    <ClCompile Include="..\..\src\FTP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Graph.cpp">
+    <ClCompile Include="..\..\src\Graph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\HTTP.cpp">
+    <ClCompile Include="..\..\src\HTTP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\InProgressList.cpp">
+    <ClCompile Include="..\..\src\InProgressList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\MainFrame.cpp">
+    <ClCompile Include="..\..\src\MainFrame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Metalink.cpp">
+    <ClCompile Include="..\..\src\Metalink.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\ProgressBar.cpp">
+    <ClCompile Include="..\..\src\ProgressBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\TaskBarIcon.cpp">
+    <ClCompile Include="..\..\src\TaskBarIcon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\UrlName.cpp">
+    <ClCompile Include="..\..\src\UrlName.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\UtilFunctions.cpp">
+    <ClCompile Include="..\..\src\UtilFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\wxDFast.cpp">
+    <ClCompile Include="..\..\src\wxDFast.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\wxMD5\md5.cpp">
+    <ClCompile Include="..\..\src\wxMD5\md5.cpp">
       <Filter>Source Files\wxMD5</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\wxMD5\wxMD5.cpp">
+    <ClCompile Include="..\..\src\wxMD5\wxMD5.cpp">
       <Filter>Source Files\wxMD5</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\wxSHA1\sha1.cpp">
+    <ClCompile Include="..\..\src\wxSHA1\sha1.cpp">
       <Filter>Source Files\wxSHA1</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\wxSHA1\wxSHA1.cpp">
+    <ClCompile Include="..\..\src\wxSHA1\wxSHA1.cpp">
       <Filter>Source Files\wxSHA1</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Resources.cpp">
+    <ClCompile Include="..\..\src\Resources.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\src\wxDFast.rc">
+    <ResourceCompile Include="..\..\src\wxDFast.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\wxDFast.h">
+    <ClInclude Include="..\..\src\wxDFast.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\wxMD5\md5.h">
+    <ClInclude Include="..\..\src\wxMD5\md5.h">
       <Filter>Header Files\wxMD5</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\wxMD5\wxMD5.h">
+    <ClInclude Include="..\..\src\wxMD5\wxMD5.h">
       <Filter>Header Files\wxMD5</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\wxSHA1\sha1.h">
+    <ClInclude Include="..\..\src\wxSHA1\sha1.h">
       <Filter>Header Files\wxSHA1</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\wxSHA1\wxSHA1.h">
+    <ClInclude Include="..\..\src\wxSHA1\wxSHA1.h">
       <Filter>Header Files\wxSHA1</Filter>
     </ClInclude>
   </ItemGroup>
