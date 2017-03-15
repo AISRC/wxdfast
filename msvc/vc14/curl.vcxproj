@@ -381,16 +381,16 @@
     <_ProjectFileVersion>14.0.25420.1</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\lib\</OutDir>
-    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\lib\</OutDir>
-    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLL Debug|Win32'">
-    <OutDir>..\lib\</OutDir>
-    <IntDir>msvs2005prj\libcurl\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
@@ -399,8 +399,8 @@
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release|Win32'">
-    <OutDir>..\lib\</OutDir>
-    <IntDir>msvs2005prj\libcurl\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
@@ -409,27 +409,27 @@
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
       <PreprocessorDefinitions>WIN32;_LIB;CURL_LDAP_WIN;CURL_STATICLIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </Midl>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_LIB;CURL_LDAP_WIN;CURL_STATICLIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <ObjectFileName>msvs2005prj\libcurl\</ObjectFileName>
-      <ProgramDataBaseFileName>..\lib\libcurl.pdb</ProgramDataBaseFileName>
+      <ObjectFileName>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\wxcurl\thirdparty\curl\lib\libcurl.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat />
@@ -437,21 +437,21 @@
     <ResourceCompile>
       <PreprocessorDefinitions>CURL_LDAP_WIN;CURL_STATICLIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Lib>
-      <OutputFile>..\lib\libcurl.lib</OutputFile>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\libcurl.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
-      <OutputFile>..\lib\curl.bsc</OutputFile>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\curl.bsc</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
       <PreprocessorDefinitions>WIN32;_LIB;CURL_LDAP_WIN;CURL_STATICLIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </Midl>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
@@ -460,8 +460,8 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <ObjectFileName>msvs2005prj\libcurl\</ObjectFileName>
-      <ProgramDataBaseFileName>..\lib\libcurl.pdb</ProgramDataBaseFileName>
+      <ObjectFileName>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\wxcurl\thirdparty\curl\lib\libcurl.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>
@@ -470,25 +470,25 @@
     <ResourceCompile>
       <PreprocessorDefinitions>CURL_LDAP_WIN;CURL_STATICLIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Lib>
       <OutputFile>$(SolutionDir)$(Platform)\$(Configuration)\libcurl.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
-      <OutputFile>..\lib\curl.bsc</OutputFile>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\curl.bsc</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Midl>
       <PreprocessorDefinitions>WIN32;_LIB;_DEBUG;CURL_LDAP_WIN;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_LIB;_DEBUG;CURL_LDAP_WIN;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -496,8 +496,8 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <ObjectFileName>msvs2005prj\libcurl\</ObjectFileName>
-      <ProgramDataBaseFileName>..\lib\libcurl.pdb</ProgramDataBaseFileName>
+      <ObjectFileName>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\wxcurl\thirdparty\curl\lib\libcurl.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -505,21 +505,21 @@
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;CURL_LDAP_WIN;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Lib>
-      <OutputFile>..\lib\libcurl.lib</OutputFile>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\libcurl.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
-      <OutputFile>..\lib\curl.bsc</OutputFile>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\curl.bsc</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
       <PreprocessorDefinitions>WIN32;_LIB;_DEBUG;CURL_LDAP_WIN;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
@@ -530,8 +530,8 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <ObjectFileName>msvs2005prj\libcurl\</ObjectFileName>
-      <ProgramDataBaseFileName>..\lib\libcurl.pdb</ProgramDataBaseFileName>
+      <ObjectFileName>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\wxcurl\thirdparty\curl\lib\libcurl.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -539,31 +539,31 @@
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;CURL_LDAP_WIN;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Lib>
       <OutputFile>$(SolutionDir)$(Platform)\$(Configuration)\libcurl.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
-      <OutputFile>..\lib\curl.bsc</OutputFile>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\curl.bsc</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLL Debug|Win32'">
     <Midl>
       <PreprocessorDefinitions>WIN32;_USRDLL;DLL_EXPORTS;CURL_LDAP_WIN;BUILDING_LIBCURL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </Midl>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_USRDLL;DLL_EXPORTS;CURL_LDAP_WIN;BUILDING_LIBCURL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <ObjectFileName>msvs2005prj\libcurl\</ObjectFileName>
-      <ProgramDataBaseFileName>..\lib\libcurl.pdb</ProgramDataBaseFileName>
+      <ObjectFileName>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\wxcurl\thirdparty\curl\lib\libcurl.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat />
@@ -571,35 +571,35 @@
     <ResourceCompile>
       <PreprocessorDefinitions>CURL_LDAP_WIN;BUILDING_LIBCURL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>wsock32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\lib\libcurl.dll</OutputFile>
-      <ImportLibrary>..\lib\libcurl.lib</ImportLibrary>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\libcurl.dll</OutputFile>
+      <ImportLibrary>..\..\wxcurl\thirdparty\curl\lib\libcurl.lib</ImportLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ProgramDatabaseFile>..\lib\libcurl.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>..\..\wxcurl\thirdparty\curl\lib\libcurl.pdb</ProgramDatabaseFile>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <Bscmake>
-      <OutputFile>..\lib\curl.bsc</OutputFile>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\curl.bsc</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLL Debug|x64'">
     <Midl>
       <PreprocessorDefinitions>WIN32;_USRDLL;DLL_EXPORTS;CURL_LDAP_WIN;BUILDING_LIBCURL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </Midl>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_USRDLL;DLL_EXPORTS;CURL_LDAP_WIN;BUILDING_LIBCURL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <ObjectFileName>msvs2005prj\libcurl\</ObjectFileName>
-      <ProgramDataBaseFileName>..\lib\libcurl.pdb</ProgramDataBaseFileName>
+      <ObjectFileName>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\wxcurl\thirdparty\curl\lib\libcurl.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>
@@ -608,28 +608,28 @@
     <ResourceCompile>
       <PreprocessorDefinitions>CURL_LDAP_WIN;BUILDING_LIBCURL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>wsock32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\lib\libcurl.dll</OutputFile>
-      <ImportLibrary>..\lib\libcurl.lib</ImportLibrary>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\libcurl.dll</OutputFile>
+      <ImportLibrary>..\..\wxcurl\thirdparty\curl\lib\libcurl.lib</ImportLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ProgramDatabaseFile>..\lib\libcurl.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>..\..\wxcurl\thirdparty\curl\lib\libcurl.pdb</ProgramDatabaseFile>
     </Link>
     <Bscmake>
-      <OutputFile>..\lib\curl.bsc</OutputFile>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\curl.bsc</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release|Win32'">
     <Midl>
       <PreprocessorDefinitions>WIN32;_USRDLL;DLL_EXPORTS;CURL_LDAP_WIN;BUILDING_LIBCURL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_USRDLL;DLL_EXPORTS;CURL_LDAP_WIN;BUILDING_LIBCURL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -637,8 +637,8 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <ObjectFileName>msvs2005prj\libcurl\</ObjectFileName>
-      <ProgramDataBaseFileName>..\lib\libcurl.pdb</ProgramDataBaseFileName>
+      <ObjectFileName>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\wxcurl\thirdparty\curl\lib\libcurl.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -646,38 +646,38 @@
     <ResourceCompile>
       <PreprocessorDefinitions>CURL_LDAP_WIN;BUILDING_LIBCURL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>wsock32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\lib\libcurl.dll</OutputFile>
-      <ImportLibrary>..\lib\libcurl.lib</ImportLibrary>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\libcurl.dll</OutputFile>
+      <ImportLibrary>..\..\wxcurl\thirdparty\curl\lib\libcurl.lib</ImportLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>..\lib\libcurl.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>..\..\wxcurl\thirdparty\curl\lib\libcurl.pdb</ProgramDatabaseFile>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <Bscmake>
-      <OutputFile>..\lib\curl.bsc</OutputFile>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\curl.bsc</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release|x64'">
     <Midl>
       <PreprocessorDefinitions>WIN32;_USRDLL;DLL_EXPORTS;CURL_LDAP_WIN;BUILDING_LIBCURL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_USRDLL;DLL_EXPORTS;CURL_LDAP_WIN;BUILDING_LIBCURL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <ObjectFileName>msvs2005prj\libcurl\</ObjectFileName>
-      <ProgramDataBaseFileName>..\lib\libcurl.pdb</ProgramDataBaseFileName>
+      <ObjectFileName>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\wxcurl\thirdparty\curl\lib\libcurl.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -685,18 +685,18 @@
     <ResourceCompile>
       <PreprocessorDefinitions>CURL_LDAP_WIN;BUILDING_LIBCURL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
-      <AdditionalIncludeDirectories>..\include;..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>wsock32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\lib\libcurl.dll</OutputFile>
-      <ImportLibrary>..\lib\libcurl.lib</ImportLibrary>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\libcurl.dll</OutputFile>
+      <ImportLibrary>..\..\wxcurl\thirdparty\curl\lib\libcurl.lib</ImportLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>..\lib\libcurl.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>..\..\wxcurl\thirdparty\curl\lib\libcurl.pdb</ProgramDatabaseFile>
     </Link>
     <Bscmake>
-      <OutputFile>..\lib\curl.bsc</OutputFile>
+      <OutputFile>..\..\wxcurl\thirdparty\curl\lib\curl.bsc</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Bscmake>
   </ItemDefinitionGroup>

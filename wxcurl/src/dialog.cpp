@@ -129,7 +129,7 @@ wxStaticText *wxCurlTransferDialog::AddSizerRow(wxSizer *sz, const wxString &nam
 {
     // the static text
     wxStaticText *st = new wxStaticText( this, wxID_STATIC, name, wxDefaultPosition, wxDefaultSize );
-    st->SetFont(wxFont(8, wxSWISS, wxNORMAL, wxBOLD, false, wxS("")));
+    st->SetFont(wxFont(8, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxS("")));
 
     // the value
     wxStaticText *ret = new wxStaticText( this, wxID_STATIC, _("Not available"),
@@ -337,10 +337,10 @@ bool wxCurlTransferDialog::HandleCurlThreadError(wxCurlThreadError err, wxCurlBa
 
         case wxCTE_CURL_ERROR:
             {
-                wxString err = wxS("unknown");
+                wxString errstr = wxS("unknown");
                 if (p->GetCurlSession())
-                    err = p->GetCurlSession()->GetErrorString();
-                wxLogError(wxS("Network error: %s"), err.c_str());
+					errstr = p->GetCurlSession()->GetErrorString();
+                wxLogError(wxS("Network error: %s"), errstr.c_str());
             }
             break;
     }
