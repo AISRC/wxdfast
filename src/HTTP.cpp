@@ -14,6 +14,7 @@
 
 mHTTP::mHTTP():wxHTTP()
 {
+    m_http_complete_response = 404;
     m_getcommand = wxEmptyString;
     m_headersmsg = wxEmptyString;
     m_messagereceived = wxEmptyString;
