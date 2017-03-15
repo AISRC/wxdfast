@@ -91,6 +91,8 @@ Follow the same instructions of the last section, but add the parameter PORTABLE
 the make command:
 # make -f Makefile.gcc BUILD=win32 PORTABLE=1
 
+libcurl
+nmake /f Makefile.vc mode=static VC=14 WITH_DEVEL=c:\DEV\openssl-OpenSSL_1_1_0d WITH_SSL=static ENABLE_WINSSL=no DEBUG=no MACHINE=x64
 
 5.2) Linux
 ----------

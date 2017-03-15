@@ -186,7 +186,8 @@ bool mApplication::NewInstance()
     return returntmp;
 }
 
-mApplication::mApplication(): mainframe(0), parameters(0), m_server(0), dummy(0), connection(0), m_checker(0), m_condAllDone(m_mutexAllDone)
+mApplication::mApplication(): downloadthreads(0), mainframe(0), parameters(0),
+	m_server(0), dummy(0), connection(0), m_checker(0), m_condAllDone(m_mutexAllDone)
 {
     // the mutex associated with a condition must be initially locked, it will
     // only be unlocked when we call Wait()

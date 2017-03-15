@@ -97,6 +97,8 @@ mDownloadThread::mDownloadThread(mDownloadFile *file, int index)
     programoptions = &(wxGetApp().mainframe->programoptions);
     downloadlist = &(wxGetApp().downloadlist);
     proxy_address = NULL;
+    redirecting = false;
+    proxy = false;
 }
 
 void mDownloadThread::OnExit()
@@ -1364,12 +1366,14 @@ bool mDownloadThread::JoinFiles(wxFileName *destination,wxFileName tempdestinati
             if (freespace < (downloadfile->totalsize))
             {
                 PrintMessage(_("There isn't enough disk space to join the file parts.\n"),HTMLERROR);
+                delete [] data;
                 return FALSE;
             }
 		}
 		else
 		{
             PrintMessage(_("Error retrieving disk space. Check if the destination directory exists.\n"),HTMLERROR);
+            delete [] data;
             return FALSE;
 		}
 	}
