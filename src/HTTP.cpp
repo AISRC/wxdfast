@@ -141,11 +141,13 @@ wxString mHTTP::GetResponseMessage()
 
 char *mHTTP::wxstr2str(wxString wxstr)
 {
-    int tamanho = wxstr.Length() + 1;
+	const wxScopedCharBuffer cbuf = wxstr.To8BitData( );
+    size_t tamanho = cbuf.length() + 1;
     char *data = new char[tamanho];
-    int i;
-    for (i = 0 ; i < (tamanho-1); i++)
-        data[i] = wxstr.GetChar(i);
-    data[i] = '\0';
+    //int i;
+    //for (i = 0 ; i < (tamanho-1); i++)
+    //    data[i] = wxstr.GetChar(i);
+    memcpy(data, cbuf.data(), cbuf.length());
+    data[tamanho-1] = '\0';
     return data;
 }
