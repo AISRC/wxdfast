@@ -1036,8 +1036,61 @@ bool mMainFrame::NewDownload(wxArrayString url, wxString destination,int metalin
     return TRUE;
 }
 
+#if 0
+#include <stdio.h>
+#include <curl/curl.h>
+#endif
+#include <wx/curl/http.h>
+
 void mMainFrame::OnNew(wxCommandEvent& event)
 {
+#if 0
+	CURL *curl;
+	CURLcode res;
+
+	curl = curl_easy_init();
+	curl_version_info_data * vinfo = curl_version_info(CURLVERSION_NOW);
+	if (curl) {
+		/* First set the URL that is about to receive our POST. This URL can
+		just as well be a https:// URL if that is what should receive the
+		data. */
+		curl_easy_setopt(curl, CURLOPT_URL, "https://sourceforge.net");
+
+		/* Perform the request, res will get the return code */
+		res = curl_easy_perform(curl);
+
+		/* always cleanup */
+		curl_easy_cleanup(curl);
+	}
+#endif
+	wxString szHost, szUser, szPass;
+
+	//if (m_pHostCtrl && m_pUserCtrl && m_pPassCtrl)
+	{
+		/*
+		szHost = _T("https://sourceforge.net/");
+		szUser = _T("user");
+		szPass = _T("pass");*/
+
+		wxCurlHTTP http(szHost);
+
+		if (!szUser.IsEmpty())
+			http.SetUsername(szUser);
+
+		if (!szPass.IsEmpty())
+			http.SetPassword(szPass);
+
+		char*	szBuffer = NULL;
+
+		if (http.Get(szBuffer) > 0)
+		{
+			if (szBuffer)
+			{
+				//m_pTextCtrl->SetValue(wxString(szBuffer, wxConvUTF8));
+				free(szBuffer);
+			}
+		}
+	}
     OnPasteURL(event);
 }
 
