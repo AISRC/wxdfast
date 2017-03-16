@@ -101,7 +101,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PreprocessorDefinitions>WIN32;_LIB;CURL_LDAP_WIN;CURL_STATICLIB;_DEBUG;BUILDING_LIBCURL;USE_OPENSSL;USE_SSLEAY;USE_IPV6;CURL_DISABLE_LDAP;UNICODE;_UNICODE;WIN32;_DEBUG;_WINDOWS;WXDFAST_PORTABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;__WXMSW__;_LIB;_DEBUG;UNICODE;_UNICODE;BUILDING_LIBCURL;CURL_STATICLIB;USE_OPENSSL;USE_SSLEAY;USE_IPV6;WXDFAST_PORTABLE;CURL_DISABLE_TFTP;CURL_DISABLE_TELNET;CURL_DISABLE_DICT;CURL_DISABLE_RTSP;CURL_DISABLE_POP3;CURL_DISABLE_IMAP;CURL_DISABLE_SMTP;CURL_DISABLE_RTMP;CURL_DISABLE_GOPHER;CURL_DISABLE_SMB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(WXWIN)\include;$(WXWIN)\include\msvc;..\..\wxcurl\include;..\..\wxcurl\thirdparty\curl\include;$(OPENSSL)\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>

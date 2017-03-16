@@ -1068,7 +1068,7 @@ void mMainFrame::OnNew(wxCommandEvent& event)
 	//if (m_pHostCtrl && m_pUserCtrl && m_pPassCtrl)
 	{
 
-		szHost = _T("https://sourceforge.net/");
+		szHost = _T("https://www.examples.com/");
 		/*		szUser = _T("user");
 		szPass = _T("pass");*/
 
