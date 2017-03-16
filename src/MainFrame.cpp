@@ -1067,9 +1067,9 @@ void mMainFrame::OnNew(wxCommandEvent& event)
 
 	//if (m_pHostCtrl && m_pUserCtrl && m_pPassCtrl)
 	{
-		/*
+
 		szHost = _T("https://sourceforge.net/");
-		szUser = _T("user");
+		/*		szUser = _T("user");
 		szPass = _T("pass");*/
 
 		wxCurlHTTP http(szHost);
