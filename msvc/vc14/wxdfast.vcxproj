@@ -103,10 +103,13 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PreprocessorDefinitions>WIN32;_WINDOWS;__WXMSW__;_LIB;_DEBUG;UNICODE;_UNICODE;BUILDING_LIBCURL;CURL_STATICLIB;USE_OPENSSL;USE_SSLEAY;USE_IPV6;WXDFAST_PORTABLE;CURL_DISABLE_TFTP;CURL_DISABLE_TELNET;CURL_DISABLE_DICT;CURL_DISABLE_RTSP;CURL_DISABLE_POP3;CURL_DISABLE_IMAP;CURL_DISABLE_SMTP;CURL_DISABLE_RTMP;CURL_DISABLE_GOPHER;CURL_DISABLE_SMB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(WXWIN)\include;$(WXWIN)\include\msvc;..\..\wxcurl\include;..\..\wxcurl\thirdparty\curl\include;$(OPENSSL)\include</AdditionalIncludeDirectories>
+      <ProgramDataBaseFileName>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(WXWIN)\lib\vc_x64_lib\;$(OPENSSL);$(OutDir)</AdditionalLibraryDirectories>
       <AdditionalDependencies>wxcurld.lib;libcurl.lib;libssl.lib;libcrypto.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;Ws2_32.lib;CRYPT32.LIB;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

@@ -52,6 +52,16 @@ public:
     void        SetCookieFile(const wxString& szFilePath);
     wxString    GetCookieFile() const;
 
+    // MDA - Get/Set Cookie Use
+    void        VerifyHostCert(const bool& bVerifyHostCert){m_bVerifyHostCert = bVerifyHostCert;}
+    bool        IsVerifyHostCert() const { return m_bVerifyHostCert;}
+    void        VerifyPeerCert(const bool& bVerifyPeerCert){m_bVerifyHostCert = bVerifyPeerCert;}
+    bool        IsVerifyPeerCert() const { return m_bVerifyPeerCert;}
+    void        VerifyProxyHostCert(const bool& bVerifyProxyHostCert){m_bVerifyHostCert = bVerifyProxyHostCert;}
+    bool        IsVerifyProxyHostCert() const { return m_bVerifyProxyHostCert;}
+    void        VerifyProxyPeerCert(const bool& bVerifyProxyPeerCert){m_bVerifyProxyPeerCert = bVerifyProxyPeerCert;}
+    bool        IsVerifyProxyPeerCert() const { return m_bVerifyProxyPeerCert;}
+
     // Action Methods - These All Make Calls To: curl_easy_perform()
 
     // OPTIONS - This Method Allows a Caller to Query the Capabilities of a Resource
@@ -100,6 +110,10 @@ protected:
 
     const char*             m_pszPostFieldsData;
     size_t                  m_iPostDataSize;
+	bool                    m_bVerifyHostCert;
+	bool                    m_bVerifyPeerCert;
+	bool                    m_bVerifyProxyHostCert;
+	bool                    m_bVerifyProxyPeerCert;
 };
 
 #endif // _WXCURLHTTP_H__INCLUDED_

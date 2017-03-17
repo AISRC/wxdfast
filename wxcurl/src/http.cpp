@@ -51,7 +51,8 @@ wxCurlHTTP::wxCurlHTTP(const wxString& szURL /*= wxEmptyString*/,
                     long flags /*= wxCURL_DEFAULT_FLAGS*/)
 : wxCurlBase(szURL, szUserName, szPassword, pEvtHandler, id, flags),
 m_pPostHead(NULL), m_pPostTail(NULL), m_bUseCookies(false), m_szCookieFile("-"),
-m_pszPostFieldsData(NULL), m_iPostDataSize(0)
+m_pszPostFieldsData(NULL), m_iPostDataSize(0), m_bVerifyHostCert(false),
+m_bVerifyPeerCert(false), m_bVerifyProxyHostCert(false), m_bVerifyProxyPeerCert(false)
 {
 }
 

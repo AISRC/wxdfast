@@ -454,7 +454,7 @@
       <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </Midl>
     <ClCompile>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\wxcurl\thirdparty\curl\include;..\..\wxcurl\thirdparty\curl\lib;$(OPENSSL)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_LIB;CURL_LDAP_WIN;CURL_STATICLIB;_DEBUG;BUILDING_LIBCURL;USE_OPENSSL;USE_SSLEAY;USE_IPV6;CURL_DISABLE_TFTP;CURL_DISABLE_LDAP;CURL_DISABLE_TELNET;CURL_DISABLE_DICT;CURL_DISABLE_RTSP;CURL_DISABLE_POP3;CURL_DISABLE_IMAP;CURL_DISABLE_SMTP;CURL_DISABLE_RTMP;CURL_DISABLE_GOPHER;CURL_DISABLE_SMB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -464,8 +464,7 @@
       <ProgramDataBaseFileName>$(SolutionDir)$(Platform)\$(Configuration)\libcurl.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <DebugInformationFormat>
-      </DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>CURL_LDAP_WIN;CURL_STATICLIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>

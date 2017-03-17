@@ -430,6 +430,26 @@ bool wxCurlBase::SetOpt(CURLoption option, ...)
 {
     va_list arg;
 
+	switch (option)
+	{
+	case CURLOPT_VERBOSE:
+	case CURLOPT_HEADER:
+	case CURLOPT_NOPROGRESS:
+	case CURLOPT_NOSIGNAL:
+	case CURLOPT_WRITEFUNCTION:
+	case CURLOPT_WRITEDATA:
+	case CURLOPT_HEADERFUNCTION:
+	case CURLOPT_HEADERDATA:
+	case CURLOPT_SSLCERTTYPE:
+	case CURLOPT_URL:
+	case CURLOPT_SSL_VERIFYHOST:
+	case CURLOPT_SSL_VERIFYPEER:
+	case CURLOPT_HTTPGET:
+		break;
+	default:
+		return true;
+	}
+
     func_T param_func = (func_T)0;
     long param_long = 0;
     void *param_obj = NULL;
