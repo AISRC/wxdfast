@@ -1036,13 +1036,13 @@ bool mMainFrame::NewDownload(wxArrayString url, wxString destination,int metalin
     return TRUE;
 }
 
-#include <openssl/ssl.h>
-#include <curl/curl.h>
-#include <curl/curl.h>
-#include <stdio.h>
-#if 0
+
 #include <wx/curl/http.h>
-#endif
+
+
+#include <openssl/ssl.h>
+//#include <curl/curl.h>
+//#include <stdio.h>
 
 size_t writefunction(void *ptr, size_t size, size_t nmemb, void *stream)
 {
@@ -1141,16 +1141,17 @@ void mMainFrame::OnNew(wxCommandEvent& event)
 		/* always cleanup */
 		curl_easy_cleanup(curl);
 	}
-
+#endif
+#if 1
 	wxString szHost, szUser, szPass;
 
 	//if (m_pHostCtrl && m_pUserCtrl && m_pPassCtrl)
 	{
-
-		szHost = _T("https://www.examples.com/");
+		wxCurlHTTP::Init();
+		szHost = _T("https://www.example.com/");
 		/*		szUser = _T("user");
 		szPass = _T("pass");*/
-
+		std::string useragent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:13.0) Gecko/20100101 Firefox/13.0.1";
 		wxCurlHTTP http(szHost);
 
 		if (!szUser.IsEmpty())
@@ -1160,7 +1161,15 @@ void mMainFrame::OnNew(wxCommandEvent& event)
 			http.SetPassword(szPass);
 
 		char*	szBuffer = NULL;
-
+		http.SetVerbose(true);
+		http.SetOpt(CURLOPT_USERAGENT, useragent.c_str());
+		http.SetOpt(CURLOPT_SSL_VERIFYHOST, 0L);
+		http.SetOpt(CURLOPT_SSL_VERIFYPEER, 0L);
+		http.SetOpt(CURLOPT_PROXY_SSL_VERIFYHOST, 0L);
+		http.SetOpt(CURLOPT_PROXY_SSL_VERIFYPEER, 0L);
+		http.SetOpt(CURLOPT_VERBOSE, 1L);
+		//http.SetOpt(CURLOPT_SSLCERTTYPE, "PEM");
+		//http.SetOpt(CURLOPT_SSL_CTX_FUNCTION, *sslctx_function);
 		if (http.Get(szBuffer) > 0)
 		{
 			if (szBuffer)
@@ -1169,8 +1178,11 @@ void mMainFrame::OnNew(wxCommandEvent& event)
 				free(szBuffer);
 			}
 		}
+		wxCurlHTTP::Shutdown();
 	}
+
 #endif
+#if 0
 	CURL *ch;
 	CURLcode rv;
 
@@ -1185,8 +1197,11 @@ void mMainFrame::OnNew(wxCommandEvent& event)
 	rv = curl_easy_setopt(ch, CURLOPT_HEADERFUNCTION, *writefunction);
 	rv = curl_easy_setopt(ch, CURLOPT_HEADERDATA, stderr);
 	rv = curl_easy_setopt(ch, CURLOPT_SSLCERTTYPE, "PEM");
-	rv = curl_easy_setopt(ch, CURLOPT_SSL_VERIFYPEER, 1L);
+	//rv = curl_easy_setopt(ch, CURLOPT_SSL_VERIFYPEER, 1L);
 	rv = curl_easy_setopt(ch, CURLOPT_URL, "https://www.example.com/");
+	rv = curl_easy_setopt(ch, CURLOPT_SSL_VERIFYHOST, 0L);
+	rv = curl_easy_setopt(ch, CURLOPT_SSL_VERIFYPEER, 0L);
+	rv = curl_easy_setopt(ch, CURLOPT_HTTPGET, 1L);
 
 	/* first try: retrieve page without cacerts' certificate -> will fail
 	*/
@@ -1209,6 +1224,7 @@ void mMainFrame::OnNew(wxCommandEvent& event)
 
 	curl_easy_cleanup(ch);
 	curl_global_cleanup();
+#endif
     OnPasteURL(event);
 }
 

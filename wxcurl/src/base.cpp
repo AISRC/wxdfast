@@ -461,6 +461,7 @@ bool wxCurlBase::SetOpt(CURLoption option, ...)
         res = curl_easy_setopt(m_pCURL, option, param_offset);
     }
 
+	wxLogDebug(wxS("[wxCURL] SetOpt %d"), option);
     va_end(arg);
 
     DumpErrorIfNeed(res);
