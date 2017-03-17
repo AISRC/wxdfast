@@ -1,3 +1,10 @@
+0.6.2
+===================================================
+- Unicode build
+- Fix issue with Unicode string
+- Replace wxHTTP and FTP with wxCurl
+- HTTPS/FTPS support
+
 0.6.1
 ===================================================
 - Added Italian language(by Angelo Contardi)
