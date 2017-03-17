@@ -464,6 +464,16 @@ public:
     void		SetProxyPort(const long& iProxyPort);
     long		GetProxyPort() const;
 
+    // MDA - Get/Set Certificate verification
+    void        VerifyHostCert(const bool& bVerifyHostCert){m_bVerifyHostCert = bVerifyHostCert;}
+    bool        IsVerifyHostCert() const { return m_bVerifyHostCert;}
+    void        VerifyPeerCert(const bool& bVerifyPeerCert){m_bVerifyHostCert = bVerifyPeerCert;}
+    bool        IsVerifyPeerCert() const { return m_bVerifyPeerCert;}
+    void        VerifyProxyHostCert(const bool& bVerifyProxyHostCert){m_bVerifyHostCert = bVerifyProxyHostCert;}
+    bool        IsVerifyProxyHostCert() const { return m_bVerifyProxyHostCert;}
+    void        VerifyProxyPeerCert(const bool& bVerifyProxyPeerCert){m_bVerifyProxyPeerCert = bVerifyProxyPeerCert;}
+    bool        IsVerifyProxyPeerCert() const { return m_bVerifyProxyPeerCert;}
+
     //! Sets verbose mode on/off. Note that in verbose mode a lot of info
     //! will be printed into an internal memory stream which can be queried
     //! using #GetVerboseStream and #GetVerboseString.
@@ -636,7 +646,11 @@ protected:
     wxDateTime              m_dtBeginTransferSpan;
     wxTimeSpan              m_tsElapsedOffset;
 
-
+	// for SSL
+	bool                    m_bVerifyHostCert;
+	bool                    m_bVerifyPeerCert;
+	bool                    m_bVerifyProxyHostCert;
+	bool                    m_bVerifyProxyPeerCert;
 protected:      // internal functions
 
     // CURL Handle Initialization Helper Method

@@ -406,7 +406,11 @@ m_bUseProxy(false), m_iProxyPort(-1),
 m_pCURL(NULL), m_pHeaders(NULL), 
 m_pEvtHandler(pEvtHandler), m_nId(id),
 m_nFlags(flags),
-m_bVerbose(false)
+m_bVerbose(false),
+m_bVerifyHostCert(false),
+m_bVerifyPeerCert(false),
+m_bVerifyProxyHostCert(false),
+m_bVerifyProxyPeerCert(false)
 {
     m_szDetailedErrorBuffer[0] = '\0';
     m_progressCallback = wxcurl_evt_progress_func;
@@ -429,26 +433,6 @@ typedef int (*func_T)(void);
 bool wxCurlBase::SetOpt(CURLoption option, ...)
 {
     va_list arg;
-
-	switch (option)
-	{
-	case CURLOPT_VERBOSE:
-	case CURLOPT_HEADER:
-	case CURLOPT_NOPROGRESS:
-	case CURLOPT_NOSIGNAL:
-	case CURLOPT_WRITEFUNCTION:
-	case CURLOPT_WRITEDATA:
-	case CURLOPT_HEADERFUNCTION:
-	case CURLOPT_HEADERDATA:
-	case CURLOPT_SSLCERTTYPE:
-	case CURLOPT_URL:
-	case CURLOPT_SSL_VERIFYHOST:
-	case CURLOPT_SSL_VERIFYPEER:
-	case CURLOPT_HTTPGET:
-		break;
-	default:
-		return true;
-	}
 
     func_T param_func = (func_T)0;
     long param_long = 0;
@@ -849,6 +833,42 @@ void wxCurlBase::SetCurlHandleToDefaults(const wxString& relativeURL)
             m_szProxyUserPass = wxCURL_STRING2BUF(str);
             SetStringOpt(CURLOPT_PROXYUSERPWD, m_szProxyUserPass);
         }
+
+		if(IsVerifyHostCert())
+		{
+			SetOpt(CURLOPT_SSL_VERIFYHOST, 2L);
+		}
+		else
+		{		
+			SetOpt(CURLOPT_SSL_VERIFYHOST, 0L);
+		}
+
+		if(IsVerifyPeerCert())
+		{
+			SetOpt(CURLOPT_SSL_VERIFYPEER, 2L);
+		}
+		else
+		{		
+			SetOpt(CURLOPT_SSL_VERIFYPEER, 0L);
+		}
+
+		if(IsVerifyProxyHostCert())
+		{
+			SetOpt(CURLOPT_PROXY_SSL_VERIFYHOST, 2L);
+		}
+		else
+		{		
+			SetOpt(CURLOPT_PROXY_SSL_VERIFYHOST, 0L);
+		}
+
+		if(IsVerifyProxyPeerCert())
+		{
+			SetOpt(CURLOPT_PROXY_SSL_VERIFYPEER, 2L);
+		}
+		else
+		{		
+			SetOpt(CURLOPT_PROXY_SSL_VERIFYPEER, 0L);
+		}
 
         if(m_bVerbose)
         {

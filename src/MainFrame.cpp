@@ -1163,11 +1163,6 @@ void mMainFrame::OnNew(wxCommandEvent& event)
 		char*	szBuffer = NULL;
 		http.SetVerbose(true);
 		http.SetOpt(CURLOPT_USERAGENT, useragent.c_str());
-		http.SetOpt(CURLOPT_SSL_VERIFYHOST, 0L);
-		http.SetOpt(CURLOPT_SSL_VERIFYPEER, 0L);
-		http.SetOpt(CURLOPT_PROXY_SSL_VERIFYHOST, 0L);
-		http.SetOpt(CURLOPT_PROXY_SSL_VERIFYPEER, 0L);
-		http.SetOpt(CURLOPT_VERBOSE, 1L);
 		//http.SetOpt(CURLOPT_SSLCERTTYPE, "PEM");
 		//http.SetOpt(CURLOPT_SSL_CTX_FUNCTION, *sslctx_function);
 		if (http.Get(szBuffer) > 0)
