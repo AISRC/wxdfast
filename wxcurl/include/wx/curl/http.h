@@ -35,7 +35,7 @@ public:
             wxEvtHandler* pEvtHandler = NULL, int id = wxID_ANY,
             long flags = wxCURL_DEFAULT_FLAGS);
     virtual ~wxCurlHTTP();
-
+    void        AddHeader(const wxString& szHeaderString){m_arrHeaders.Add(szHeaderString);}
     // Post Data Methods
     bool        AddForm(const bool& bClear, const wxString& szName,
                         struct curl_forms* pForms, CURLFORMcode* outErr=NULL);

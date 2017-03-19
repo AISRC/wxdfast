@@ -1,12 +1,12 @@
 /*
-*	base.cpp
-*	wxCURL
+*    base.cpp
+*    wxCURL
 *
-*	Created by Casey O'Donnell on Tue Jun 29 2004.
-*	Copyright (c) 2004 Casey O'Donnell. All rights reserved.
+*    Created by Casey O'Donnell on Tue Jun 29 2004.
+*    Copyright (c) 2004 Casey O'Donnell. All rights reserved.
 *
 *
-*	Licence: wxWidgets Licence
+*    Licence: wxWidgets Licence
 */
 
 //////////////////////////////////////////////////////////////////////
@@ -465,7 +465,7 @@ bool wxCurlBase::SetOpt(CURLoption option, ...)
         res = curl_easy_setopt(m_pCURL, option, param_offset);
     }
 
-	wxLogDebug(wxS("[wxCURL] SetOpt %d"), option);
+    wxLogDebug(wxS("[wxCURL] SetOpt %d"), option);
     va_end(arg);
 
     DumpErrorIfNeed(res);
@@ -834,41 +834,41 @@ void wxCurlBase::SetCurlHandleToDefaults(const wxString& relativeURL)
             SetStringOpt(CURLOPT_PROXYUSERPWD, m_szProxyUserPass);
         }
 
-		if(IsVerifyHostCert())
-		{
-			SetOpt(CURLOPT_SSL_VERIFYHOST, 2L);
-		}
-		else
-		{		
-			SetOpt(CURLOPT_SSL_VERIFYHOST, 0L);
-		}
+        if(IsVerifyHostCert())
+        {
+            SetOpt(CURLOPT_SSL_VERIFYHOST, 2L);
+        }
+        else
+        {        
+            SetOpt(CURLOPT_SSL_VERIFYHOST, 0L);
+        }
 
-		if(IsVerifyPeerCert())
-		{
-			SetOpt(CURLOPT_SSL_VERIFYPEER, 2L);
-		}
-		else
-		{		
-			SetOpt(CURLOPT_SSL_VERIFYPEER, 0L);
-		}
+        if(IsVerifyPeerCert())
+        {
+            SetOpt(CURLOPT_SSL_VERIFYPEER, 2L);
+        }
+        else
+        {        
+            SetOpt(CURLOPT_SSL_VERIFYPEER, 0L);
+        }
 
-		if(IsVerifyProxyHostCert())
-		{
-			SetOpt(CURLOPT_PROXY_SSL_VERIFYHOST, 2L);
-		}
-		else
-		{		
-			SetOpt(CURLOPT_PROXY_SSL_VERIFYHOST, 0L);
-		}
+        if(IsVerifyProxyHostCert())
+        {
+            SetOpt(CURLOPT_PROXY_SSL_VERIFYHOST, 2L);
+        }
+        else
+        {        
+            SetOpt(CURLOPT_PROXY_SSL_VERIFYHOST, 0L);
+        }
 
-		if(IsVerifyProxyPeerCert())
-		{
-			SetOpt(CURLOPT_PROXY_SSL_VERIFYPEER, 2L);
-		}
-		else
-		{		
-			SetOpt(CURLOPT_PROXY_SSL_VERIFYPEER, 0L);
-		}
+        if(IsVerifyProxyPeerCert())
+        {
+            SetOpt(CURLOPT_PROXY_SSL_VERIFYPEER, 2L);
+        }
+        else
+        {        
+            SetOpt(CURLOPT_PROXY_SSL_VERIFYPEER, 0L);
+        }
 
         if(m_bVerbose)
         {
