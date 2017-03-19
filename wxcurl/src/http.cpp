@@ -51,7 +51,10 @@ wxCurlHTTP::wxCurlHTTP(const wxString& szURL /*= wxEmptyString*/,
                     long flags /*= wxCURL_DEFAULT_FLAGS*/)
 : wxCurlBase(szURL, szUserName, szPassword, pEvtHandler, id, flags),
 m_pPostHead(NULL), m_pPostTail(NULL), m_bUseCookies(false), m_szCookieFile("-"),
-m_pszPostFieldsData(NULL), m_iPostDataSize(0)
+m_pszPostFieldsData(NULL), m_iPostDataSize(0), m_llRange(-1), m_bVerifyHostCert(false),
+m_bVerifyPeerCert(false),
+m_bVerifyProxyHostCert(false),
+m_bVerifyProxyPeerCert(false)
 {
 }
 
@@ -87,6 +90,16 @@ void wxCurlHTTP::SetCookieFile(const wxString& szFilePath)
 wxString wxCurlHTTP::GetCookieFile() const
 {
     return wxCURL_BUF2STRING(m_szCookieFile);
+}
+
+void wxCurlHTTP::SetUserAgent(const wxString& szUserAgent)
+{
+    m_szUserAgent = wxCURL_STRING2BUF(szUserAgent);
+}
+
+wxString wxCurlHTTP::GetUserAgent() const
+{
+    return wxCURL_BUF2STRING(m_szUserAgent);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -392,5 +405,51 @@ void wxCurlHTTP::SetCurlHandleToDefaults(const wxString& relativeURL)
     {
         SetStringOpt(CURLOPT_COOKIEJAR, m_szCookieFile);
     }
+
+    if(IsVerifyHostCert())
+    {
+        SetOpt(CURLOPT_SSL_VERIFYHOST, 2L);
+    }
+    else
+    {        
+        SetOpt(CURLOPT_SSL_VERIFYHOST, 0L);
+    }
+
+    if(IsVerifyPeerCert())
+    {
+        SetOpt(CURLOPT_SSL_VERIFYPEER, 2L);
+    }
+    else
+    {        
+        SetOpt(CURLOPT_SSL_VERIFYPEER, 0L);
+    }
+
+    if(IsVerifyProxyHostCert())
+    {
+        SetOpt(CURLOPT_PROXY_SSL_VERIFYHOST, 2L);
+    }
+    else
+    {        
+        SetOpt(CURLOPT_PROXY_SSL_VERIFYHOST, 0L);
+    }
+
+    if(IsVerifyProxyPeerCert())
+    {
+        SetOpt(CURLOPT_PROXY_SSL_VERIFYPEER, 2L);
+    }
+    else
+    {        
+        SetOpt(CURLOPT_PROXY_SSL_VERIFYPEER, 0L);
+    }
+
+	if(m_szUserAgent.length())
+	{
+		SetStringOpt(CURLOPT_USERAGENT, m_szUserAgent);
+	}
+
+	if(m_llRange != -1)
+	{
+		SetStringOpt(CURLOPT_USERAGENT, m_llRange.ToString().mb_str());
+	}
 }
 

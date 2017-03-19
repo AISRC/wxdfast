@@ -406,11 +406,7 @@ m_bUseProxy(false), m_iProxyPort(-1),
 m_pCURL(NULL), m_pHeaders(NULL), 
 m_pEvtHandler(pEvtHandler), m_nId(id),
 m_nFlags(flags),
-m_bVerbose(false),
-m_bVerifyHostCert(false),
-m_bVerifyPeerCert(false),
-m_bVerifyProxyHostCert(false),
-m_bVerifyProxyPeerCert(false)
+m_bVerbose(false)
 {
     m_szDetailedErrorBuffer[0] = '\0';
     m_progressCallback = wxcurl_evt_progress_func;
@@ -832,49 +828,6 @@ void wxCurlBase::SetCurlHandleToDefaults(const wxString& relativeURL)
 
             m_szProxyUserPass = wxCURL_STRING2BUF(str);
             SetStringOpt(CURLOPT_PROXYUSERPWD, m_szProxyUserPass);
-        }
-
-        if(IsVerifyHostCert())
-        {
-            SetOpt(CURLOPT_SSL_VERIFYHOST, 2L);
-        }
-        else
-        {        
-            SetOpt(CURLOPT_SSL_VERIFYHOST, 0L);
-        }
-
-        if(IsVerifyPeerCert())
-        {
-            SetOpt(CURLOPT_SSL_VERIFYPEER, 2L);
-        }
-        else
-        {        
-            SetOpt(CURLOPT_SSL_VERIFYPEER, 0L);
-        }
-
-        if(IsVerifyProxyHostCert())
-        {
-            SetOpt(CURLOPT_PROXY_SSL_VERIFYHOST, 2L);
-        }
-        else
-        {        
-            SetOpt(CURLOPT_PROXY_SSL_VERIFYHOST, 0L);
-        }
-
-        if(IsVerifyProxyPeerCert())
-        {
-            SetOpt(CURLOPT_PROXY_SSL_VERIFYPEER, 2L);
-        }
-        else
-        {        
-            SetOpt(CURLOPT_PROXY_SSL_VERIFYPEER, 0L);
-        }
-
-        if(m_bVerbose)
-        {
-            SetOpt(CURLOPT_VERBOSE, TRUE);
-            SetOpt(CURLOPT_DEBUGFUNCTION, wxcurl_verbose_stream_write);
-            SetOpt(CURLOPT_DEBUGDATA, (void*) &m_mosVerbose);
         }
     }
 }
