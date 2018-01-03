@@ -61,7 +61,7 @@ void mGraph::OnPaint(wxPaintEvent &event)
     smallfont.SetPointSize(10);
 
     //SET THE BACKGROUND COLOR
-    wxBrush b(programoptions->graphbackcolor, wxSOLID);
+    wxBrush b(programoptions->graphbackcolor, wxBRUSHSTYLE_SOLID);
     dc.SetBackground(b);
     dc.Clear();
 

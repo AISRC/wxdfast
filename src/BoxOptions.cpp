@@ -124,7 +124,7 @@ void mBoxOptionsColorPanel::OnPaint(wxPaintEvent &event)
     wxPaintDC dc(this);
     if (colour.Ok())
     {
-        wxBrush b(colour, wxSOLID);
+        wxBrush b(colour, wxBRUSHSTYLE_SOLID);
         dc.SetBackground(b);
         dc.Clear();
     }
